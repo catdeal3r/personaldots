@@ -10,7 +10,7 @@ Singleton {
 
 	FileView {
 		id: jsonColoursSink
-		path: Config.settings.colours.useCustom ? `${Quickshell.shellDir}/settings/custom_colours.json` : `${Quickshell.shellDir}/settings/colours.json`
+		path: `${Quickshell.shellDir}/settings/colours.json`
 		
 		watchChanges: true
 		onFileChanged: reload()

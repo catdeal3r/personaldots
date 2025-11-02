@@ -38,8 +38,6 @@ ClippingRectangle {
     radius: Config.settings.borderRadius + 5
     color: singleNotif.popup ? Colours.palette.surface : Qt.alpha(Colours.palette.surface_container_low, 0.6)
 
-    
-
     Loader {
 		active: singleNotif.popup
 		
@@ -86,24 +84,15 @@ ClippingRectangle {
         onClicked: singleNotif.popup ? Notifications.timeoutNotification(modelData.notificationId) : Notifications.discardNotification(modelData.notificationId)
 
 		onPressed: event => {
-            if (singleNotif.popup)
-                startY = event.y
-            else
-		    	startX = event.x;
+            startX = event.x;
 
 			if (event.button === Qt.MiddleButton)
 				Notifications.discardNotification(modelData.notificationId)
 		}
 
 		onPositionChanged: event => {
-            if (singleNotif.popup) {
-                if (event.y < startY) {
-                    Notifications.timeoutNotification(modelData.notificationId)
-                }
-            } else {
-                if (event.x > startX) {
-                    Notifications.discardNotification(modelData.notificationId)
-                }
+            if (event.x > startX) {
+                Notifications.discardNotification(modelData.notificationId)
             }
 		}
     }

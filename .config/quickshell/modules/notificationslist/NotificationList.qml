@@ -23,6 +23,7 @@ Scope {
 		
 			anchors {
 				top: true
+				right: true
 			}
 		
 			aboveWindows: true
@@ -51,7 +52,7 @@ Scope {
 				implicitWidth: 400
 				
 				anchors.top: parent.top
-				anchors.topMargin: 20
+				anchors.topMargin: 60
 				
 				anchors.right: parent.right
 				anchors.rightMargin: 20
@@ -69,8 +70,8 @@ Scope {
 					NumberAnimation {
 						duration: 500
 						easing.bezierCurve: Anim.standard
-						from: -500
-						property: "y"
+						from: 500
+						property: "x"
 					}
 				}
 				
@@ -91,8 +92,8 @@ Scope {
 					NumberAnimation {
 						duration: 500
 						easing.bezierCurve: Anim.standard
-						property: "y"
-						to: -500
+						property: "x"
+						to: 500
 					}
 				}
 				

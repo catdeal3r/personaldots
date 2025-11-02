@@ -8,7 +8,6 @@ import QtQuick.Controls
 import Quickshell.Widgets
 import Quickshell.Services.Mpris
 
-import qs.modules.dashboard.music
 import qs.services
 import qs.config
 import qs.modules.common

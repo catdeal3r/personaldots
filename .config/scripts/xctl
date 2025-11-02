@@ -36,21 +36,6 @@ function clearNotifs() {
 	$(which qs) ipc call root clearNotifs
 }
 
-function rebuildQuickshell() {
-	cd ~
-	if [[ $(ls quickshell-git) ]]; then
-		cd quickshell-git
-		git reset --hard origin/master
-		git pull
-		sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=ON -DSERVICE_PAM=ON -DHYPRLAND=OFF
-		sudo cmake --build build
-		qs kill
-		sudo cmake --install build
-		qs --daemonize
-	else
-		echo "The 'quickshell-git' directory has not been found in the home directory. Did you follow the install instructions exactly?"
-	fi
-}
 
 case $1 in
 --start) start ;;
@@ -61,5 +46,4 @@ case $1 in
 --lock) toggleLock ;;
 --setWall) setWall $2 ;;
 --clearNotifs) clearNotifs ;;
---updateQuickshell) rebuildQuickshell ;;
 esac

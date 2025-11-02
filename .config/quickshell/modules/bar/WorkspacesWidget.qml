@@ -7,14 +7,13 @@ import qs.modules.common
 
 Rectangle {
 	id: root
-	width: 45
-	height: 40 * (Workspaces.niriWorkspaces?.length) + 3 * (Workspaces.niriWorkspaces?.length - 1) + 5
+	width: 20 * (Workspaces.niriWorkspaces?.length) + 5 * (Workspaces.niriWorkspaces?.length - 1) + 20
+	height: 40
 	color: "transparent"
 
-	anchors.top: parent.top
-	anchors.topMargin: Config.settings.bar.workspacesCenterAligned ? (parent.height / 2) - (height / 2) : 60				
-
 	anchors.left: parent.left
+	anchors.leftMargin: 20			
+
 
 	property int workspaceCount: 5
 
@@ -25,9 +24,9 @@ Rectangle {
 		}
 	}
 
-	ColumnLayout {
+	RowLayout {
 		anchors.fill: parent
-		spacing: 3
+		spacing: 5
 
 		Repeater {
 			model: Workspaces.niriWorkspaces
@@ -35,115 +34,28 @@ Rectangle {
 			Rectangle {
 				property bool hovered: false
 
-				Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-				Layout.preferredWidth: Workspaces.niriWorkspaces[index].is_focused ? root.width - 17 : root.width - 18
-				Layout.rightMargin: 2
+				Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+				Layout.preferredHeight: root.height
+				Layout.topMargin: -5
 
-				Layout.preferredHeight: {
-					if (hovered)
-						return 45;
-					if (Workspaces.niriWorkspaces[index].is_focused)
-						return 45;
-					else
-						return 40;
-				}
-
-				color: {
-					if (Workspaces.niriWorkspaces[index].is_focused)
-						return Colours.palette.primary
-					else if (Workspaces.niriWorkspaces[index].active_window_id != null)
-						return Colours.palette.surface_container
-					else
-						return "transparent"
-				}
-
-				function getTopRadius() {
-					if (hovered)
-						return Config.settings.borderRadius;
-					if (Workspaces.niriWorkspaces[index].is_focused)
-						return Config.settings.borderRadius;
-					if (index == 0)
-						return Config.settings.borderRadius;
-					return 4;
-				}
-
-				function getBottomRadius() {
-					if (hovered)
-						return Config.settings.borderRadius;
-					if (Workspaces.niriWorkspaces[index].is_focused)
-						return Config.settings.borderRadius;
-					if (index + 1 == Workspaces.niriWorkspaces.length)
-						return Config.settings.borderRadius;
-					return 4;
-				}
-
-				topLeftRadius: getTopRadius()
-				topRightRadius: getTopRadius()
-
-				bottomLeftRadius: getBottomRadius()
-				bottomRightRadius: getBottomRadius()
-
-				Behavior on topLeftRadius {
-					PropertyAnimation {
-						duration: Config.settings.animationSpeed
-						easing.type: Easing.InSine
-					}
-				}
-
-				Behavior on topRightRadius {
-					PropertyAnimation {
-						duration: Config.settings.animationSpeed
-						easing.type: Easing.InSine
-					}
-				}
-
-				Behavior on bottomLeftRadius {
-					PropertyAnimation {
-						duration: Config.settings.animationSpeed
-						easing.type: Easing.InSine
-					}
-				}
-
-				Behavior on bottomRightRadius {
-					PropertyAnimation {
-						duration: Config.settings.animationSpeed
-						easing.type: Easing.InSine
-					}
-				}
-
-				Behavior on Layout.preferredHeight {
-					PropertyAnimation {
-						duration: Config.settings.animationSpeed
-						easing.type: Easing.InSine
-					}
-				}
+				Layout.preferredWidth: 20
+				color: "transparent"
 
 				Text {
-					anchors.left: parent.left
-					anchors.top: parent.top
-
-					anchors.topMargin: Workspaces.niriWorkspaces[index].active_window_id != null && !Workspaces.niriWorkspaces[index].is_focused ? parent.height / 2 - 6 : parent.height / 2 - 7
-					anchors.leftMargin: Workspaces.niriWorkspaces[index].active_window_id != null && !Workspaces.niriWorkspaces[index].is_focused ? parent.width / 2 - 4.8 : parent.width / 2 - 6.5
-
-					text: Workspaces.niriWorkspaces[index].active_window_id != null && !Workspaces.niriWorkspaces[index].is_focused ? "" : ""
-					color: {
-						if (Workspaces.niriWorkspaces[index].active_window_id != null && !Workspaces.niriWorkspaces[index].is_focused)
-							return Qt.alpha(Colours.palette.on_surface, 0.8)
-						else if (Workspaces.niriWorkspaces[index].is_focused)
-							return Colours.palette.on_primary
-						else
-							return Colours.palette.outline
-					}
+					anchors.centerIn: parent
+					text: !Workspaces.niriWorkspaces[index].is_focused ? "square" : "dialogs"
+					color: !Workspaces.niriWorkspaces[index].is_focused ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.on_surface
 
 					Behavior on color {
 						PropertyAnimation {
-							duration: 200
+							duration: Config.settings.animationSpeed
 							easing.type: Easing.InSine
 						}
 					}
 
-					font.family: Config.settings.font
-					font.pixelSize: Workspaces.niriWorkspaces[index].active_window_id != null && !Workspaces.niriWorkspaces[index].is_focused ? 11 : 13
+					font.family: Config.settings.iconFont
+					font.pixelSize: 16
+					font.weight: 600
 				}
 
 				MouseArea {

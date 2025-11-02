@@ -1,7 +1,0 @@
-
-[general]
-import = [ "colors.toml" ]
-
-[window]
-dynamic_padding = true
-padding = { x = 15, y = 15 }

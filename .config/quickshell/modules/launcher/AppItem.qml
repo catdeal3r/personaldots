@@ -32,32 +32,8 @@ Rectangle {
 		}
 	}
 
-    ClippingWrapperRectangle {
-        id: entryIcon
-        anchors.left: parent.left
-        anchors.leftMargin: 10
-
-        anchors.top: parent.top
-        anchors.topMargin: (parent.height / 2) - (size / 2)
-
-        property int size: 25
-        height: size
-        width: size
-        radius: 1000
-
-        color: "transparent"
-
-        child: Image {
-            source: Quickshell.iconPath(modelData.icon, "application-x-executable")
-            layer.enabled: true
-            layer.effect: MultiEffect {
-                saturation: Config.settings.colours.genType == "scheme-monochrome" && !Config.settings.colours.useCustom ? -1.0 : 1.0
-            }
-        }
-    }
-
     ColumnLayout {
-        anchors.left: entryIcon.right
+        anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.topMargin: (parent.height / 2) - (height / 2)

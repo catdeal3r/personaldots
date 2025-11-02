@@ -11,9 +11,6 @@ import qs.modules.launcher
 import qs.modules.lockscreen
 import qs.modules.notificationslist
 import qs.modules.desktop
-import qs.modules.dashboard
-import qs.modules.dock
-import qs.modules.settings
 
 Scope {
 	Loader {
@@ -30,26 +27,6 @@ Scope {
 			sourceComponent: Bar {
 				onFinished: IPCLoader.toggleBar()
 			}
-		}
-	}
-
-	Loader {
-		active: Config.settings.componentControl.dockIsEnabled
-
-		sourceComponent: Loader {
-			active: IPCLoader.isDockOpen
-			
-			sourceComponent: Dock {
-				onFinished: IPCLoader.toggleDock()
-			}
-		}
-	}
-
-	Loader {
-		active: Config.settings.componentControl.dashboardIsEnabled
-
-		sourceComponent: Dashboard {
-			isDashboardOpen: IPCLoader.isDashboardOpen
 		}
 	}
 
@@ -71,9 +48,5 @@ Scope {
 		active: Config.settings.componentControl.desktopIsEnabled
 
 		sourceComponent: Desktop {}
-	}
-
-	SettingsWindow {
-		isSettingsWindowOpen: IPCLoader.isSettingsOpen
 	}
 }
