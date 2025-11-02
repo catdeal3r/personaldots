@@ -60,15 +60,17 @@ Scope {
 				RowLayout {
 					spacing: 10
 
-					width: 150
+					width: 180
 					height: parent.height
 					anchors.right: parent.right
 					anchors.rightMargin: 20
 							
 					SysTray {
-						Layout.preferredHeight: 20
+						Layout.preferredHeight: 10
 						Layout.preferredWidth: (SystemTray.items.values.length * 25)
 						Layout.alignment: Qt.AlignVCenter
+						Layout.topMargin: -4
+
 						bar: barWindow
 					}	
 					

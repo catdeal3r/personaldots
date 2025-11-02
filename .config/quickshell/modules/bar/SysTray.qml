@@ -17,7 +17,7 @@ Rectangle {
 	visible: SystemTray.items.values.length
 	color: "transparent"
 	
-	ColumnLayout {
+	RowLayout {
 		anchors.centerIn: parent
 		spacing: 10
 		
@@ -27,7 +27,7 @@ Rectangle {
 			delegate: Rectangle {
 				id: sysItem
 				required property var modelData
-				Layout.alignment: Qt.AlignCenter
+				Layout.alignment: Qt.AlignVCenter
 				height: 21
 				width: 21
 				color: "transparent"
