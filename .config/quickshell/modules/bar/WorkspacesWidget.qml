@@ -7,7 +7,9 @@ import qs.modules.common
 
 Rectangle {
 	id: root
-	width: 20 * (Workspaces.niriWorkspaces?.length) + 5 * (Workspaces.niriWorkspaces?.length - 1) + 20
+	property int wIndex: 0
+
+	width: parent.width - 200
 	height: 40
 	color: "transparent"
 
@@ -17,34 +19,61 @@ Rectangle {
 
 	property int workspaceCount: 5
 
-	Behavior on anchors.topMargin {
-		PropertyAnimation {
-			duration: Config.settings.animationSpeed
-			easing.type: Easing.InSine
+	
+
+	Rectangle {
+		anchors.left: parent.left
+		anchors.top: parent.top
+
+		anchors.topMargin: 13
+		anchors.leftMargin: 10.5 + (wIndex * (25 + 5 + 4)) + (wIndex - 1)
+
+		width: 8
+		height: 8
+
+		color: Colours.palette.on_surface
+
+		Behavior on anchors.leftMargin {
+			PropertyAnimation {
+				duration: Config.settings.animationSpeed
+				easing.type: Easing.InSine
+			}
 		}
+
+		radius: 1000
 	}
 
 	RowLayout {
 		anchors.fill: parent
-		spacing: 5
+		spacing: 10
 
 		Repeater {
 			model: Workspaces.niriWorkspaces
 
 			Rectangle {
+				Component.onCompleted: {
+					if (Workspaces.niriWorkspaces[index].is_focused) {
+						root.wIndex = index
+					}
+				}
+
 				property bool hovered: false
 
 				Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-				Layout.preferredHeight: root.height
 				Layout.topMargin: -5
+				Layout.fillWidth: false
+				Layout.horizontalStretchFactor: 0
+				Layout.leftMargin: 0
+				Layout.rightMargin: 0
 
-				Layout.preferredWidth: 20
+				Layout.preferredWidth: 25
+				Layout.preferredHeight: Layout.preferredWidth
 				color: "transparent"
 
 				Text {
 					anchors.centerIn: parent
-					text: !Workspaces.niriWorkspaces[index].is_focused ? "circle" : "album" //"square" : "dialogs"
-					color: !Workspaces.niriWorkspaces[index].is_focused ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.on_surface
+					text: "circle"
+					color: !Workspaces.niriWorkspaces[index].is_focused ? Qt.alpha(Colours.palette.on_surface, 0.6) : Colours.palette.on_surface
 
 					Behavior on color {
 						PropertyAnimation {
@@ -54,7 +83,7 @@ Rectangle {
 					}
 
 					font.family: Config.settings.iconFont
-					font.pixelSize: 16
+					font.pixelSize: 17
 					font.weight: 600
 				}
 
@@ -66,6 +95,12 @@ Rectangle {
 					onExited: parent.hovered = false
 				}
 			}
+		}
+
+		Rectangle {
+			Layout.fillWidth: true
+			Layout.preferredHeight: 10
+			color: "transparent"
 		}
 	}
 }
