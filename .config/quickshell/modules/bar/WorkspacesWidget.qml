@@ -43,7 +43,7 @@ Rectangle {
 
 				Text {
 					anchors.centerIn: parent
-					text: !Workspaces.niriWorkspaces[index].is_focused ? "square" : "dialogs"
+					text: !Workspaces.niriWorkspaces[index].is_focused ? "circle" : "album" //"square" : "dialogs"
 					color: !Workspaces.niriWorkspaces[index].is_focused ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.on_surface
 
 					Behavior on color {

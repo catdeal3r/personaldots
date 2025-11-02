@@ -58,9 +58,9 @@ Scope {
 				WorkspacesWidget {}
 						
 				RowLayout {
-					spacing: 10
+					spacing: 15
 
-					width: 180
+					//width: 170
 					height: parent.height
 					anchors.right: parent.right
 					anchors.rightMargin: 20
