@@ -383,7 +383,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "foot"; }
-    Alt+Space hotkey-overlay-title="Run an Application" { spawn "qs" "ipc" "call" "root" "toggleLauncher"; }
+    Alt+Space hotkey-overlay-title="Run an Application" { spawn "sherlock"; }//"qs" "ipc" "call" "root" "toggleLauncher"; }
     Super+E hotkey-overlay-title="Open the file manager" { spawn "nautilus" "-w"; }
     Super+L hotkey-overlay-title="Lock the Screen" { spawn "qs" "ipc" "call" "lock" "lock"; }
     Super+Shift+S hotkey-overlay-title="Take a screenshot" { spawn "sh" "-c" "~/.config/scripts/screenshot.sh --select"; }
