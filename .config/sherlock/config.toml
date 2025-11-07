@@ -18,7 +18,7 @@ app_paths = []
 
 [appearance]
 width = 900
-height = 593
+height = 650
 gsk_renderer = "cairo"
 icon_paths = ["~/.config/sherlock/icons"]
 icon_size = 22
