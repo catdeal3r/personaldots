@@ -77,6 +77,46 @@
             "icon": "google"
         },
         "priority": 100
+    },
+    {
+        "name": "Emoji Picker",
+        "type": "emoji_picker",
+        "args": {
+            "default_skin_tone": "Simpsons"
+        },
+        "priority": 4,
+        "home": "Search"
+    },
+    {
+    "name": "Power Options",
+    "alias": "po",
+    "type": "command",
+    "args": {
+        "commands": {
+            "Suspend": {
+                "icon": "sleep",
+                "exec": "systemctl suspend",
+                "search_string": "suspend",
+                "tag_start": "{keyword}",
+                "tag_end": "{keyword}"
+            },
+            "Lock": {
+                "icon": "lock",
+                "exec": "qs ipc call lock lock",
+                "search_string": "lock",
+                "tag_start": "{keyword}",
+                "tag_end": "{keyword}"
+            },
+            "Reboot": {
+                "icon": "reboot",
+                "exec": "systemctl reboot",
+                "search_string": "reboot",
+                "tag_start": "{keyword}",
+                "tag_end": "{keyword}"
+            }
+        }
+    },
+    "priority": 5
     }
 ]
 

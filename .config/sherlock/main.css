@@ -1,8 +1,8 @@
 :root {
-    --background: hsl(0, 0%, 9%);
-    --foreground: hsl(0, 0%, 15%);
-    --text: hsl(53, 100%, 97%);
-    --border: hsl(0, 0%, 9%);
+    --background: #131313;
+    --foreground: #212121;
+    --text: #e5e5e1;
+    --border: #131313;
 
 
     --tag-background: hsl(0, 0%, 9%);
@@ -60,7 +60,7 @@ overshoot:backdrop {
     outline-offset: -3px;
     outline-style: dashed;
     line-height: 1;
-    font-family: "Product Sans";
+    font-family: "SF Pro Display";
 }
 
 label {
@@ -98,7 +98,7 @@ window {
 
 window:not(#backdrop) {
     color: var(--text);
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid var(--border);
 }
 
@@ -194,7 +194,7 @@ image {
     padding: 0px 10px;
     margin-bottom: 5px;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 12px;
 }
 
 .tile:hover *,
@@ -280,15 +280,15 @@ row:selected .tile {
 
 row:selected .tile.multi-active,
 .tile.multi-active {
-    background: hsl(from var(--foreground) h s l / 100%);
-    background-color: hsl(from var(--foreground) h s l / 100%);
+    background: var(--foreground);
+    background-color: var(--foreground);
     border: 1px solid hsl(from var(--text) h s l / 20%);
 }
 
 .tile:selected .tag,
 .tag {
     font-size: 11px;
-    border-radius: 3px;
+    border-radius: 15px;
     padding: 2px 8px;
     color: var(--tag-color);
     box-shadow: 0px 0px 10px 0px rgba(2, 2, 2, 0.4);
