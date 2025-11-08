@@ -705,12 +705,7 @@
   },
   {
     "notificationId": 119,
-    "actions": [
-      {
-        "identifier": "default",
-        "text": "View"
-      }
-    ],
+    "actions": [],
     "appIcon": "lunarclient",
     "appName": "lunarclient",
     "body": "You can now launch Minecraft again!",
@@ -794,6 +789,105 @@
     "image": "",
     "summary": "Protect your eyes.",
     "time": 1762390522532,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 129,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762501349348,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 130,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762503149255,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 131,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762504949229,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 133,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762555437929,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 134,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762557237821,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 135,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762559038017,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 136,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762561531824,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 137,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762563332806,
+    "urgency": "1"
+  },
+  {
+    "notificationId": 138,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1762565132813,
     "urgency": "1"
   }
 ]
