@@ -88,35 +88,59 @@
         "home": "Search"
     },
     {
-    "name": "Power Options",
-    "alias": "po",
-    "type": "command",
-    "args": {
-        "commands": {
-            "Suspend": {
-                "icon": "sleep",
-                "exec": "systemctl suspend",
-                "search_string": "suspend",
-                "tag_start": "{keyword}",
-                "tag_end": "{keyword}"
-            },
-            "Lock": {
-                "icon": "lock",
-                "exec": "qs ipc call lock lock",
-                "search_string": "lock",
-                "tag_start": "{keyword}",
-                "tag_end": "{keyword}"
-            },
-            "Reboot": {
-                "icon": "reboot",
-                "exec": "systemctl reboot",
-                "search_string": "reboot",
-                "tag_start": "{keyword}",
-                "tag_end": "{keyword}"
+        "name": "Power Options",
+        "alias": "po",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Suspend": {
+                    "icon": "sleep",
+                    "exec": "systemctl suspend",
+                    "search_string": "suspend",
+                    "tag_start": "{keyword}",
+                    "tag_end": "{keyword}"
+                },
+                "Lock": {
+                    "icon": "lock",
+                    "exec": "qs ipc call lock lock",
+                    "search_string": "lock",
+                    "tag_start": "{keyword}",
+                    "tag_end": "{keyword}"
+                },
+                "Reboot": {
+                    "icon": "reboot",
+                    "exec": "systemctl reboot",
+                    "search_string": "reboot",
+                    "tag_start": "{keyword}",
+                    "tag_end": "{keyword}"
+                }
             }
-        }
+        },
+        "priority": 5
     },
-    "priority": 5
+    {
+        "name": "Connectivity",
+        "alias": "co",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Toggle wifi": {
+                    "icon": "network",
+                    "exec": "tcs w",
+                    "search_string": "wifi",
+                    "tag_start": "{keyword}",
+                    "tag_end": "{keyword}"
+                },
+                "Toggle bluetooth": {
+                    "icon": "bluetooth",
+                    "exec": "tcs b",
+                    "search_string": "bluetooth",
+                    "tag_start": "{keyword}",
+                    "tag_end": "{keyword}"
+                }
+           }
+        },
+        "priority": 5
     }
 ]
 
