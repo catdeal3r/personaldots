@@ -34,7 +34,7 @@ Scope {
 				right: true
 			}
 
-			//color: "transparent"
+			color: "transparent"
 			
 			implicitHeight: 40
 			
@@ -54,6 +54,7 @@ Scope {
 				width: barWindow.width
 				height: barWindow.implicitHeight
 				color: Colours.palette.surface
+				
 
 				WorkspacesWidget {}
 						
