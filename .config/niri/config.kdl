@@ -254,7 +254,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "sh" "-c" "qs" "-d"
+spawn-at-startup "sh" "-c" "udisksctl mount -b /dev/sda1 && qs -d"
 spawn-at-startup "sh" "-c" "xwayland-satellite"
 spawn-at-startup "sh" "-c" "swayidle -w timeout 300 'qs ipc call lock lock' before-sleep 'qs ipc call lock lock'"
 prefer-no-csd
