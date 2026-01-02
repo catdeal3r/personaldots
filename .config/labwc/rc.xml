@@ -1,0 +1,109 @@
+
+<?xml version="1.0" ?>
+<labwc_config>
+  <theme>
+    <name>minimal</name>
+    <titlebar>
+      <layout>:iconify,close</layout>
+      <showTitle>no</showTitle>
+    </titlebar>
+    <font>
+      <name>CommitMono</name>
+      <size>11</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
+    </font>
+    <keepBorder>no</keepBorder>
+    <cornerRadius>0</cornerRadius>
+    <dropShadows>no</dropShadows>
+  </theme>
+  <desktops number="8" popupTime="1000" prefix="w" />
+  <keyboard>
+    <!-- The W- prefix refers to the Super key -->
+    <keybind key="W-Return">
+      <action name="Execute" command="lab-sensible-terminal" />
+    </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute" command="~/.config/scripts/screenshot.sh --select"/>
+    </keybind>
+    <keybind key="A-Space">
+      <action name="Execute" command="wofi" />
+    </keybind>
+    <keybind key="W-w">
+      <action name="Close" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="W-Left">
+      <action name="GoToDesktop" to="left"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="GoToDesktop" to="right"/>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +5%"/>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -5%"/>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle"/>
+    </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute" command="pactl set-source-mute @DEFAULT_SOURCE@ toggle"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set 5%+"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 5%-"/>
+    </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-5">
+      <action name="SendToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-6">
+      <action name="SendToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-7">
+      <action name="SendToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-8">
+      <action name="SendToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+  </keyboard>
+</labwc_config>
