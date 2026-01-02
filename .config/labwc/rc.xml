@@ -17,7 +17,7 @@
     <cornerRadius>0</cornerRadius>
     <dropShadows>no</dropShadows>
   </theme>
-  <desktops number="8" popupTime="1000" prefix="w" />
+  <desktops number="8" popupTime="1000" prefix="" />
   <keyboard>
     <!-- The W- prefix refers to the Super key -->
     <keybind key="W-Return">
@@ -27,7 +27,7 @@
       <action name="Execute" command="~/.config/scripts/screenshot.sh --select"/>
     </keybind>
     <keybind key="A-Space">
-      <action name="Execute" command="wofi" />
+      <action name="Execute" command="sherlock" />
     </keybind>
     <keybind key="W-w">
       <action name="Close" />
