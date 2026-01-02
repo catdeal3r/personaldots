@@ -29,7 +29,7 @@ function toggleLauncher()
 
 function setWall() {
 	wall="$1"
-	killall swaybg
+	pkill swaybg
 	swaybg -m fill -i "$wall" > /dev/null 2>&1 & disown
 	echo "#!/bin/sh" > ~/.config/labwc/wallset.sh
 	echo "swaybg -m fill -i "$wall" & disown" >> ~/.config/labwc/wallset.sh
